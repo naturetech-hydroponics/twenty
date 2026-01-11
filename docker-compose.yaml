@@ -28,11 +28,11 @@ services:
 
       # Application Configuration
       - NODE_PORT=3000
-      - FRONTEND_URL=$SERVICE_FQDN_SERVER
-      - SERVER_URL=$SERVICE_FQDN_SERVER
+      - FRONTEND_URL
+      - SERVER_URL
 
       # Database Configuration - Auto-generated password by Coolify
-      - PG_DATABASE_URL=postgres://postgres:$SERVICE_PASSWORD_POSTGRES@db:5432/default
+      - PG_DATABASE_URL
 
       # Redis Configuration
       - REDIS_URL=redis://redis:6379
@@ -106,10 +106,10 @@ services:
       - docker-data:/app/docker-data
     environment:
       # Database Configuration - Reuses same password as server
-      - PG_DATABASE_URL=postgres://postgres:$SERVICE_PASSWORD_POSTGRES@db:5432/default
+      - PG_DATABASE_URL
 
       # Server URL
-      - SERVER_URL=$SERVICE_FQDN_SERVER
+      - SERVER_URL
 
       # Redis Configuration
       - REDIS_URL=redis://redis:6379
